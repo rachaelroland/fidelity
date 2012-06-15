@@ -1,0 +1,21 @@
+h1 Listing product_attributes
+
+table
+  tr
+    th Attribute
+    th Product
+    th
+    th
+    th
+
+  - @product_attributes.each do |product_attribute|
+    tr
+      td = product_attribute.attribute
+      td = product_attribute.product_id
+      td = link_to 'Show', product_attribute
+      td = link_to 'Edit', edit_product_attribute_path(product_attribute)
+      td = link_to 'Destroy', product_attribute, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Product attribute', new_product_attribute_path

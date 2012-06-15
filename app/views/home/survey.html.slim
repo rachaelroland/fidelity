@@ -1,0 +1,10 @@
+h1 Welcome #{@user.name}
+p Please fill out the survey (Check all that apply):
+= form_for @category, :url => home_survey_results_path, :method => "post" do |f|
+  = f.fields_for :questions do |question|
+    = render "questions/question_fields", :f => question
+  .row.span12
+    = f.submit "Submit"
+
+
+

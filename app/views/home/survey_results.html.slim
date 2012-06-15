@@ -1,0 +1,9 @@
+p
+  - if @matching_products.any?
+    | We found these products for you:
+    ul
+    - @matching_products.each do |product|
+      li #{product.name}
+  - else
+    | No matching products found
+

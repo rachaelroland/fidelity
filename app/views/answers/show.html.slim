@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Response:
+  = @answer.response
+p
+  strong Question:
+  = @answer.question_id
+p
+  strong User:
+  = @answer.user_id
+
+= link_to 'Edit', edit_answer_path(@answer)
+'|
+= link_to 'Back', answers_path

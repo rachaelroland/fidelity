@@ -1,0 +1,4 @@
+.row.span12
+  = f.label :query, f.object.query
+  = f.fields_for :answers, Answer.new(user_id: @user.id, question_id: f.object.id) do |answer|
+    = render 'answers/answer_fields', :f => answer
