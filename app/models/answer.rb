@@ -1,6 +1,4 @@
-class Answer < ActiveRecord::Base
-  include ActionView::Helpers::TextHelper
-  
+class Answer < ActiveRecord::Base  
   belongs_to :question
   belongs_to :user
   
