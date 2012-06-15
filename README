@@ -1,0 +1,16 @@
+bundle install
+rails server
+
+Make admin executable:
+
+chmod u+x admin.rb
+./admin.rb list_survey_results
+
+Or run it with the ruby command:
+
+ruby admin.rb list_survey_results
+ruby admin.rb delete_product -n 'some name'
+ruby admin.rb list_products
+
+
+
