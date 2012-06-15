@@ -19,7 +19,7 @@ class HomeController < ApplicationController
     @category = Category.find(session[:category_id])
     @user = User.find(session[:user_id])
     @category.update_attributes(params[:category])
-    questions = Question.positive_by_user(@user.id)
+    questions = Question.positive_by_user(@user.id, @category)
     @matching_products = Product.match_by_attributes(questions.map(&:item_attribute))
   end
 end
