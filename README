@@ -1,7 +1,15 @@
+* Step up the site/database first:
+
 bundle install
+rake db:migrate
+rake db:seed
 rails server
 
-Make admin executable:
+* Take the survey
+
+http://localhost:3000/
+
+* Make admin executable:
 
 chmod u+x admin.rb
 ./admin.rb list_survey_results
