@@ -1,4 +1,4 @@
-* Step up the site/database first:
+* Step up the site/database first
 
 bundle install
 rake db:migrate
@@ -14,7 +14,7 @@ http://localhost:3000/
 chmod u+x admin.rb
 ./admin.rb list_survey_results
 
-Or run it with the ruby command:
+* Or run it with the ruby command:
 
 ruby admin.rb list_survey_results
 ruby admin.rb delete_product -n 'some name'
