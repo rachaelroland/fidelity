@@ -6,11 +6,7 @@ class Question < ActiveRecord::Base
   class << self
     def positive_by_user( user_id, category )
       answers = Answer.joins(:question).where("questions.category_id = ? AND answers.user_id = ?", category.id, user_id).order('answers.id DESC').limit(category.questions.count)
-      question_ids = []
-      answers.each do |answer|
-        question_ids.push(answer.question.id) if answer.response == "1"
-      end
-      Question.where('questions.id in (?)', question_ids)
+      Question.where('questions.id in (?)', answers.reject{ |x| x.response == "0" }.map(&:question_id))
     end
   end
 end
